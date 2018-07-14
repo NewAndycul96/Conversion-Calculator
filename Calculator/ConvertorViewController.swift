@@ -10,6 +10,10 @@ import UIKit
 
 class ConvertorViewController: UIViewController {
 
+    @IBOutlet weak var outputDisplay: UITextField!
+    @IBOutlet weak var inputDisplay: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +23,26 @@ class ConvertorViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+  
+    @IBAction func convertorButton(_ sender: Any) {
+        let sheet = UIAlertController(title: "Choice", message: "Convertor", preferredStyle: .actionSheet)
+        
+        let action1 = (UIAlertAction(title: "fahrenheit to celcius", style: .default, handler: {(alertAction) -> Void in
+            self.inputDisplay.text = ""}))
+        let action2 = (UIAlertAction(title: "celcius to fahrenheit", style: .default, handler: {(alertAction) -> Void in
+            self.inputDisplay.text = ""}))
+        let action3 = (UIAlertAction(title: "miles to kilometers,", style: .default, handler: {(alertAction) -> Void in
+            self.inputDisplay.text = ""}))
+        let action4 = (UIAlertAction(title: "kilometers to miles", style: .default, handler: {(alertAction) -> Void in
+            self.inputDisplay.text = ""}))
+        
+        sheet.addAction(action1)
+        sheet.addAction(action2)
+        sheet.addAction(action3)
+        sheet.addAction(action4)
+        
+        self.present(sheet, animated: true, completion: nil)
     }
     
 
